@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Real time Editor</title>
+    <script>
+      function refresh() {
+        var textContent = document.getElementById("editor-textarea").value
+        document.getElementById("viewer").srcdoc = textContent
+      }
+    </script>
+    <style>
+      * {
+        padding: 0;
+        margin: o;
+      }
+      h2 {
+        text-align: center;
+        padding: 10px;
+        background: #673ab7;
+        color: white;
+        font-family: arial;
+      }
+      h2 a {
+        text-decoration: none;
+        color: #ff002d;
+        font-family: cursive;
+        margin-left: 5px;
+      }
+      .main {
+        background: #ecf0f1;
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+      }
+      #editor-textarea {
+        width: 100%;
+        height: 80%;
+        margin: 10px;
+        padding: 10px;
+        margin-top: 50px;
+        background: black;
+        color: #fefefe;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      #viewer {
+        background: white;
+        border: none;
+        width: 100%;
+        height: 95%;
+        margin: 10px;
+        border: 1px solid #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <textarea id="editor-textarea" onkeyup="refresh()" placeholder="Ketik disini..."></textarea>
+      <iframe id="viewer"></iframe>
+    </div>
+  </body>
+</html>
